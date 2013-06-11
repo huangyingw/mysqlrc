@@ -1,4 +1,5 @@
 #!/bin/sh
 TARGET="$1"
+PASSWD=`cat $HOME/sqlrc/passwd |grep xspasswd|awk '{print $3}'`
 DB=`cat /opt/xetusbase/tomcat/conf/catalina.properties |grep WEBAPP_DBNAME|awk '{print $3}'`
-mysql -uroot -pbl0ss0m -h127.0.0.1 $DB < "$TARGET"
+mysql -uroot -p"$PASSWD" -h127.0.0.1 $DB < "$TARGET"
