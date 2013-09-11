@@ -6,8 +6,8 @@ then
 fi
 TARGET="$1"
 user="root"
-if [ -f $HOME/sqlrc/passwd ]; then
-  PASSWD=`cat $HOME/sqlrc/passwd |grep xspasswd|awk '{print $3}'`
+if [ -f $HOME/.passwd ]; then
+  PASSWD=`cat $HOME/.passwd |grep xspasswd|awk '{print $3}'`
 else
   PASSWD="1qaz@WSX"
 fi
